@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link
+      rel="icon"
+      href="{% static 'ecowise/setup/logo.png' %}"
+      type="image/png"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'ecowise/setup/logo.png' %}"
+      type="image/png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>EcoVise . Welcome</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-orange-700 text-white">
+    <div class="text-center">
+
+        <img class="mb-10 mx-auto rounded-md shadow shadow-md shadow-red-400 h-32" src="{% static 'ecowise/setup/logo.png' %}" alt="MoZoop Logo">
+
+        <h1 class="text-3xl font-bold mb-4">Welcome to MoZoop!</h1>
+        <p class="text-lg">...</p>
+    </div>
+</body>
+<script>
+    setTimeout(() => {
+        window.location.href = "{% if request.session.user_id %}{% url 'home' %}{% else %}{% url 'user_login' %}{% endif %}";
+    }, 5000);
+</script>
+</html>

@@ -3,6 +3,43 @@ from django.db import models
 # Create your models here.
 
 
+class UserData(models.Model):
+    uid  = models.CharField(max_length=300)
+    username = models.TextField(max_length=255)
+    email  = models.TextField(default=0.0)
+    phone  = models.TextField(default=0.0)
+    preferencelist  = models.TextField(default=0.0)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.uid} - {self.username} - created : {self.timestamp}"
+
+
+class ProductData(models.Model):
+    pid  = models.CharField(max_length=300)
+    title = models.TextField(default="")
+    description  = models.TextField(default="")
+    img  = models.TextField(default="") # stored as base64
+    price  = models.TextField(default="")
+    tags  = models.TextField(default="")
+    escore  = models.TextField(default="")
+    ecoobj  = models.TextField(default="")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.pid} - {self.title} - price : {self.price} - escore: {self.escore} - tags : {self.tags}"
+    
+
+
+    
+
+
+
+
+
+
+
+
 # class SensorData(models.Model):
 #     # api_key = models.CharField(max_length=300)
 #     nodename = models.CharField(max_length=255)

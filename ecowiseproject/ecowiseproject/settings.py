@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-          'ecowise.apps.EcowiseConfig',
+          'ecowiseapp.apps.EcowiseappConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',

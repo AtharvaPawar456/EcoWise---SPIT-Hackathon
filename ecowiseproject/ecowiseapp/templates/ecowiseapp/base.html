@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- 
+    {% static %}
+     <link rel="icon" href="{% static 'ecowise/setup/logo.png' %}" type="image/png">
+
+    -->
+
+    <!-- <meta http-equiv="refresh" content="600" /> -->
+
+    <link
+      rel="icon"
+      href="ecowiseapp\static\ecowise\setup\logo.png"
+      type="image/png"
+    />
+    <link
+      rel="shortcut icon"
+      href="ecowiseapp\static\ecowise\setup\logo.png"
+      type="image/png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      {% block css %} {% endblock %}
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+
+    <title>EcoWise</title>
+  </head>
+  <body class="bg-[#fff7ed]">
+    <!-- Navbar with Background Video -->
+    <section class="relative h-[650px] w-full border">
+      <video
+        autoplay
+        loop
+        muted
+        class="absolute top-20 left-0 w-full h-[700px] object-cover"
+      >
+        <source
+          src="ecowiseapp\static\ecowise\setup\ecowiseBanner.mp4"
+          type="video/mp4"
+        />
+        <!-- Fallback content if the video doesn't play -->
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Fixed Navbar -->
+      <div
+        class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-4 bg-[#06424B] z-10"
+      >
+        <!-- Logo -->
+        <div>
+          <img
+            src="ecowiseapp\static\ecowise\setup\logo.png"
+            alt="EcoWise Logo"
+            class="h-12 rounded-md"
+          />
+        </div>
+        <!-- Navbar Links -->
+        <div class="flex space-x-8 text-xl font-bold text-yellow-100">
+          <a href="#home" class="hover:text-green-400 hover:underline">Home</a>
+          <a href="#products" class="hover:text-green-400 hover:underline"
+            >Products</a
+          >
+          <a href="#profile" class="hover:text-green-400 hover:underline"
+            >Profile</a
+          >
+        </div>
+      </div>
+    </section>
+
+    {% if message %}
+    <div class="text-center text-red-700 text-4xl font-bold mt-20">
+      Wrong Route
+    </div>
+    {% else %}
+
+    <!-- content -->
+    <div>{% block content %}{% endblock %}</div>
+
+
+    <!-- Body Section with Top Margin -->
+    <section class="mt-40 mb-10 py-4 px-10 font-mono">
+      <div class="text-center text-4xl font-bold text-green-800">Popular</div>
+
+      <!-- Popular Cards -->
+      <div class="my-2 py-4 px-8 grid grid-cols-4 gap-4">
+        <!-- Card 1 -->
+        <div class="">
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft2')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft2"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight2')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight2"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-2xl font-bold text-green-600 mb-10">
+        <i
+          class="p-2 border rounded-md hover:bg-green-600 hover:text-yellow-100"
+          >More</i
+        >
+      </div>
+
+      <div class="text-center text-4xl font-bold text-green-800">
+        Recommended
+      </div>
+
+      <!-- Recommended Cards -->
+      <div class="my-2 py-4 px-8 grid grid-cols-4 gap-4">
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+        <!-- Card 1 -->
+        <div>
+          <div class="relative">
+            <!-- Image -->
+            <img
+              src="ecowiseapp\static\ecowise\setup\logo.png"
+              alt="EcoWise Logo"
+              class="h-60 w-full rounded-md"
+            />
+
+            <!-- Icon with Clickable Popup (Top-left) -->
+            <div
+              class="absolute top-4 left-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupTopLeft1')"
+            >
+              <i class="fa-solid fa-certificate"></i>
+              <div
+                id="popupTopLeft1"
+                class="absolute hidden mt-2 left-0 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the top-left icon in Card 1.
+              </div>
+            </div>
+
+            <!-- Icon with Clickable Popup (Bottom-right) -->
+            <div
+              class="absolute border border-1 border-gray-700 bottom-4 right-4 bg-yellow-100 text-green-800 rounded-md p-1 px-2 cursor-pointer"
+              onclick="togglePopup('popupBottomRight1')"
+            >
+              <i class="fa-solid fa-seedling"></i>
+              <div
+                id="popupBottomRight1"
+                class="absolute hidden mb-20 mr-10 p-2 bg-gray-100 text-green-800 rounded-md shadow-lg text-sm"
+              >
+                Description for the bottom-right icon in Card 1.
+              </div>
+            </div>
+          </div>
+          <!-- Product Title below the image -->
+          <div class="mt-2 text-center text-gray-700 font-semibold">
+            <div class="text-lg">Product Title</div>
+            <!-- Product title goes here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-2xl font-bold text-green-600 mb-10">
+        <i
+          class="p-2 border rounded-md hover:bg-green-600 hover:text-yellow-100"
+          >More</i
+        >
+      </div>
+
+      <div class="grid grid-cols-3 gap-1 mt-24">
+        <div>
+          <div>
+            <div class="text-6xl">21M</div>
+
+            <div class="text-2xl">TREES PLANTED WORLDWIDE</div>
+            <hr class="border-2 border-gray-600" />
+            <div class="text-2xl">
+              Use this space to explain the above number.
+            </div>
+          </div>
+          <div class="mt-40">
+            <div class="text-6xl">155</div>
+
+            <div class="text-2xl">COMMUNITIES REACHED</div>
+            <hr class="border-2 border-gray-600" />
+            <div class="text-2xl">
+              Use this space to explain the above number.
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="ecowiseapp\static\ecowise\setup\Earth.webp"
+          alt="earth img"
+          class="h-[510px]"
+        />
+        <div class="text-right">
+          <div>
+            <div class="text-6xl">345M</div>
+
+            <div class="text-2xl">TONNES OF CARBON EMISSIONS REDUCED</div>
+            <hr class="border-2 border-gray-600" />
+            <div class="text-2xl">
+              Use this space to explain the above number.
+            </div>
+          </div>
+          <div class="mt-40">
+            <div class="text-6xl">551</div>
+
+            <div class="text-2xl">RENEWABLE ENERGY PROJECTS</div>
+            <hr class="border-2 border-gray-600" />
+            <div class="text-2xl">
+              Use this space to explain the above number.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function togglePopup(popupId) {
+          const popup = document.getElementById(popupId);
+          popup.classList.toggle("hidden");
+        }
+      </script>
+    </section>
+
+
+
+
+    
+    {% block js %}{% endblock %} {% endif %}
+  </body>
+</html>
